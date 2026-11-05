@@ -53,7 +53,7 @@ data class Template(val category: String, val timer: TimerDef)
 private fun work(name: String, s: Int) = IntervalDef(name, s, Role.WORK)
 private fun rest(s: Int, name: String = "Descanso") = IntervalDef(name, s, Role.REST)
 
-/** Modelos próprios do Timer Jitsu, baseados em protocolos de treino de domínio comum. */
+/** Timer Jitsu's own templates, based on common public training protocols. */
 val Templates: List<Template> = listOf(
     Template("Intervalado", TimerDef(id = "t-tabata", name = "Tabata 20/10", description = "8 tiros de 20 s com 10 s de pausa", color = TimerColor.CORAL, prepare = 10, cue = Cue.BUZZER, blocks = listOf(BlockDef(8, listOf(work("Tiro", 20), rest(10)))))),
     Template("Intervalado", TimerDef(id = "t-3030", name = "Meio a meio", description = "30 s forte, 30 s leve, 10 vezes", color = TimerColor.AMBER, prepare = 10, cue = Cue.WHISTLE, blocks = listOf(BlockDef(10, listOf(work("Forte", 30), rest(30, "Leve")))))),

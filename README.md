@@ -1,22 +1,28 @@
 # Timer Jitsu
 
-**Todo segundo importa.**
+**Todo segundo importa.** (Every second counts.)
 
-Timer de treino para Android (Kotlin + Jetpack Compose), para uso pessoal. Código, visual, modelos e sons são
-próprios: os sons são sintetizados em `Feedback.kt`, sem arquivos de áudio no app.
+An interval workout timer for Android, built with Kotlin and Jetpack Compose. All sounds are synthesized in
+`Feedback.kt`, so the app ships no audio files. The app's interface is currently in Portuguese.
 
-- Timers com preparação, séries, repetições, ciclos, descanso entre ciclos e relaxamento
-- Cronômetro com voltas manuais e automáticas
-- Modelos prontos, busca, duplicar e excluir
-- Sons, contagem regressiva, voz, vibração, lanterna e flash na tela
-- Continua em segundo plano por um serviço em primeiro plano
+## Features
 
-## Comandos
+- Timers with prepare, sets, repeats, cycles, rest between cycles and cooldown
+- Stopwatch with manual and automatic laps
+- Ready-made templates, search, duplicate and delete
+- Sounds, countdown, voice, vibration, torch and screen flash
+- Keeps running in the background through a foreground service
+
+## Commands
 
     ./gradlew :app:testDebugUnitTest
     ./gradlew :app:assembleDebug
     adb install -r app/build/outputs/apk/debug/app-debug.apk
 
-A lógica do treino fica em `Engine.kt`, sem dependências do Android, e é coberta por `EngineTest.kt`.
+The workout logic lives in `Engine.kt`, has no Android dependencies and is covered by `EngineTest.kt`.
 
-O que falta testar e fazer está em [`PENDENCIAS.md`](PENDENCIAS.md).
+Remaining work is tracked in [`TODO.md`](TODO.md).
+
+## License
+
+[MIT](LICENSE)

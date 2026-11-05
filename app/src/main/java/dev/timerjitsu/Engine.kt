@@ -49,7 +49,7 @@ fun compile(t: TimerDef): List<Segment> {
     return out
 }
 
-/** Duração total em segundos; cronômetros contam apenas a preparação. */
+/** Total duration in seconds; stopwatches only count their prepare phase. */
 fun totalSeconds(t: TimerDef): Long =
     compile(t).filter { !it.open }.sumOf { it.millis } / 1000
 
@@ -65,7 +65,7 @@ fun formatTime(totalSec: Long, padMinutes: Boolean = true): String {
     }
 }
 
-/** Máquina de estados pura: quem chama informa o tempo decorrido via [advance]. */
+/** Pure state machine: the caller reports elapsed time through [advance]. */
 class WorkoutSession(val timer: TimerDef) {
     val segments: List<Segment> = compile(timer)
     var index = 0; private set

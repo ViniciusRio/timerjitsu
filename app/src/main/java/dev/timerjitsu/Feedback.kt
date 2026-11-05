@@ -20,7 +20,7 @@ import kotlin.math.PI
 import kotlin.math.exp
 import kotlin.math.sin
 
-/** Todos os sons são sintetizados aqui; o app não embarca arquivos de áudio. */
+/** All sounds are synthesized here; the app ships no audio files. */
 private object Synth {
     const val RATE = 44100
 

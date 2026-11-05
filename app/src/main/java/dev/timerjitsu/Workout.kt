@@ -34,7 +34,7 @@ data class WorkoutView(
     val flashSeq: Int,
 )
 
-/** Mantém a sessão viva fora do ciclo de vida da Activity. */
+/** Keeps the session alive outside the Activity lifecycle. */
 object Workout {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private val _view = MutableStateFlow<WorkoutView?>(null)
