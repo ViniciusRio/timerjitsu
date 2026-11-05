@@ -1,0 +1,33 @@
+Monte o seu treino, aperte o play e deixe o celular de lado. O Timer Jitsu avisa cada troca de intervalo com som, voz, vibração ou luz, mesmo com a tela apagada.
+
+MONTE DO SEU JEITO
+• Tempo de preparação, séries, repetições, ciclos, descanso entre ciclos e volta à calma
+• Nome, descrição e cor para cada timer
+• Busca, duplicação e exclusão de timers
+
+COMECE COM UM MODELO
+Rounds de luta, Tabata, EMOM, séries de força, circuito, tiros de corrida, alongamento e respiração. Use como estão ou adapte ao seu treino.
+
+CRONÔMETRO COM VOLTAS
+Conte o tempo para cima e marque voltas manualmente ou de forma automática.
+
+AVISOS QUE VOCÊ NOTA
+• Sino, gongo, apito, buzina e bipes
+• Contagem regressiva nos últimos segundos
+• Voz que fala o nome do intervalo
+• Vibração, lanterna e flash na tela
+• Ajuste de volume no próprio app
+
+FEITO PARA O TREINO
+• Continua funcionando com a tela apagada
+• Pause ou continue pela notificação
+• Tela grande e fácil de ler de longe, em pé ou deitada
+
+SEM CADASTRO E SEM ANÚNCIOS
+O app não pede login, não tem anúncios e funciona sem internet. Os seus timers ficam guardados apenas no seu aparelho.
+
+CÓDIGO ABERTO
+O código-fonte está disponível no GitHub sob a licença MIT.
+
+AVISO
+O Timer Jitsu não é um dispositivo médico e não diagnostica, trata, cura nem previne doenças. Consulte um profissional de saúde antes de começar um programa de exercícios.

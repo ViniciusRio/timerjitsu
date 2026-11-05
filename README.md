@@ -18,6 +18,11 @@ An interval workout timer for Android, built with Kotlin and Jetpack Compose. Al
     ./gradlew :app:testDebugUnitTest
     ./gradlew :app:assembleDebug
     adb install -r app/build/outputs/apk/debug/app-debug.apk
+    ./gradlew :app:bundleRelease
+
+The release bundle is signed only when a `keystore.properties` file exists at the project root (it is ignored by
+git). Store listing texts, images and Play Console answers live in `play-store/`, and the privacy policy lives in
+`docs/`.
 
 The workout logic lives in `Engine.kt`, has no Android dependencies and is covered by `EngineTest.kt`.
 

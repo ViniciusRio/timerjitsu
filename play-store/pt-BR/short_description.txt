@@ -1,0 +1,1 @@
+Todo segundo importa. Timer de intervalos para luta, força, corrida e mais.

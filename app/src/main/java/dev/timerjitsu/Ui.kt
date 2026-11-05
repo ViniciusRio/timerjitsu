@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -70,6 +71,18 @@ private fun onColor(c: Color) = if (c.luminance() > 0.35f) Ink else Color.White
 
 private val Title = FontFamily.SansSerif
 const val Slogan = "Todo segundo importa"
+private const val PrivacyPolicyUrl = "https://viniciusrio.github.io/timerjitsu/privacy-policy.html"
+private const val SourceUrl = "https://github.com/ViniciusRio/timerjitsu"
+private val OpenSourceLibraries = listOf(
+    "AndroidX e Jetpack Compose",
+    "Material Icons",
+    "Kotlin",
+    "kotlinx.coroutines",
+    "kotlinx.serialization",
+    "Guava ListenableFuture",
+    "JetBrains Annotations",
+    "JSpecify",
+)
 
 @Composable
 private fun Heading(text: String, modifier: Modifier = Modifier) {
@@ -266,6 +279,8 @@ private fun TemplatesTab(settings: Settings, onStart: (TimerDef) -> Unit, onSave
 
 @Composable
 private fun SettingsTab(s: Settings, on: (Settings) -> Unit) {
+    val uriHandler = LocalUriHandler.current
+    var showLicenses by rememberSaveable { mutableStateOf(false) }
     Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(horizontal = 16.dp, vertical = 12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Heading("Ajustes")
         SettingGroup("Som") {
@@ -287,7 +302,37 @@ private fun SettingsTab(s: Settings, on: (Settings) -> Unit) {
             ToggleRow("Abrir último timer", "Abre direto o último usado ao iniciar", s.openLast) { on(s.copy(openLast = it)) }
             ToggleRow("Minutos com dois dígitos", "00:30 em vez de 0:30", s.padMinutes) { on(s.copy(padMinutes = it)) }
         }
+        SettingGroup("Sobre") {
+            LinkRow("Política de privacidade") { runCatching { uriHandler.openUri(PrivacyPolicyUrl) } }
+            LinkRow("Licenças de código aberto") { showLicenses = true }
+            LinkRow("Código-fonte") { runCatching { uriHandler.openUri(SourceUrl) } }
+            Text("Versão ${BuildConfig.VERSION_NAME}", Modifier.padding(horizontal = 16.dp, vertical = 12.dp), color = Muted, fontSize = 13.sp)
+        }
     }
+    if (showLicenses) LicensesDialog { showLicenses = false }
+}
+
+@Composable
+private fun LinkRow(title: String, onClick: () -> Unit) {
+    Text(title, Modifier.fillMaxWidth().clickable(onClick = onClick).padding(horizontal = 16.dp, vertical = 14.dp), fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+}
+
+@Composable
+private fun LicensesDialog(onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val apache = remember { context.resources.openRawResource(R.raw.apache_license).bufferedReader().use { it.readText() } }
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = { TextButton(onDismiss) { Text("Fechar") } },
+        title = { Text("Licenças de código aberto") },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Text("O Timer Jitsu usa as bibliotecas abaixo, todas sob a Licença Apache 2.0:")
+                Text(OpenSourceLibraries.joinToString("\n") { "• $it" })
+                Text(apache, fontSize = 11.sp, fontFamily = FontFamily.Monospace)
+            }
+        },
+    )
 }
 
 @Composable
