@@ -9,7 +9,7 @@
         <intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>
     </queries>
     <application
-        android:label="Timerjitsu"
+        android:label="Timer Jitsu"
         android:icon="@drawable/ic_launcher"
         android:allowBackup="true"
         android:theme="@style/AppTheme">

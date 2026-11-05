@@ -154,7 +154,7 @@ private fun MineTab(
     Box(Modifier.fillMaxSize()) {
         Column {
             Column(Modifier.fillMaxWidth().padding(start = 16.dp, end = 16.dp, top = 12.dp)) {
-                Text("Timerjitsu", color = Accent, fontWeight = FontWeight.Black, fontSize = 16.sp)
+                Text("Timer Jitsu", color = Accent, fontWeight = FontWeight.Black, fontSize = 16.sp)
                 Text(Slogan, color = Muted, fontSize = 13.sp)
             }
             SearchHeader("Meus timers", query, { query = it })

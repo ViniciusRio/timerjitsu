@@ -219,7 +219,7 @@ class WorkoutService : Service() {
             val paused = v?.status == Status.PAUSED
             return Notification.Builder(context, CHANNEL)
                 .setSmallIcon(android.R.drawable.ic_lock_idle_alarm)
-                .setContentTitle(v?.timer?.name?.ifBlank { "Timerjitsu" } ?: "Timerjitsu")
+                .setContentTitle(v?.timer?.name?.ifBlank { "Timer Jitsu" } ?: "Timer Jitsu")
                 .setContentText(if (paused) "Pausado" else v?.segment?.label ?: "")
                 .setContentIntent(open)
                 .setOngoing(true)
