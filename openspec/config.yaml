@@ -5,6 +5,12 @@ context: |
   The repository is public: never put secrets, keys or private business notes in artifacts.
   Engine.kt must stay free of Android dependencies so it stays unit-testable.
 
+operations:
+  apply:
+    guidance:
+      - Before editing any code, confirm that Codex reviewed this change and that Vinícius approved it in this conversation or on the PR. If either is missing, stop and ask.
+      - Work on a feat/ or fix/ branch, never on main.
+
 # Project context (optional)
 # Add only constraints that should guide OpenSpec artifacts and workflows.
 # Include constraints an agent cannot infer by reading the code.

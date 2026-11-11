@@ -22,7 +22,8 @@ Definition of done before a handoff: tests, lint and `assembleDebug` pass, run b
 ## Workflow
 
 - Relevant changes start with an OpenSpec change (`proposal.md`, `design.md`, `tasks.md`), reviewed by Codex and
-  approved by Vinícius before code. Small fixes (typo, one-liner) skip the spec.
+  approved by Vinícius before code. No implementation (including `openspec-apply-change`) starts before both.
+  Small fixes (typo, one-liner) skip the spec.
 - Work on a `feat/...`, `fix/...` or `chore/...` branch, never on `main`. Open a PR with the handoff in its
   description: Objetivo, Branch e commit, Arquivos alterados, Decisões, Checagens rodadas, Dúvidas em aberto,
   Próxima ação.
