@@ -26,7 +26,8 @@ git). Store listing texts, images and Play Console answers live in `play-store/`
 
 The workout logic lives in `Engine.kt`, has no Android dependencies and is covered by `EngineTest.kt`.
 
-Remaining work is tracked in [`TODO.md`](TODO.md).
+Current state is in [`STATUS.md`](STATUS.md) and planned changes in [`openspec/`](openspec/). Agent rules
+live in [`AGENTS.md`](AGENTS.md).
 
 ## License
 
