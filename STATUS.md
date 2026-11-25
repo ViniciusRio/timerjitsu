@@ -1,8 +1,11 @@
 # Status
 
-**Done:** app ready for the Play Store (signed release, privacy policy, listing). Tested on a Galaxy A26
-(Android 16) with the release build: background workout, sounds, voice, music ducking, torch, flash, laps,
-notification controls.
+**Done:** v0.1.0 (versionCode 1, tag `v0.1.0` on `3ff6934`) is live in Play Store production. Tested on a
+Galaxy A26 (Android 16) with the release build: background workout, sounds, voice, music ducking, torch,
+flash, laps, notification controls.
+
+**Watching:** Play Console Android vitals (crashes, ANRs, background service killed by OEM battery savers)
+and reviews. Next upload must bump `versionCode` to 2; test it on an internal track before production.
 
 **Next (no OpenSpec change yet):** heart rate, smartwatch integration, drag to reorder timers, other languages
 (UI strings are hardcoded in Kotlin).
