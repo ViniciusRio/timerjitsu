@@ -4,6 +4,10 @@
 (Android 16) with the release build: background workout, sounds, voice, music ducking, torch, flash, laps,
 notification controls.
 
+**In progress:** version 1 (0.1.0) was submitted to the Play Console production track on 2026-11-24 (full
+rollout, 6 Portuguese-speaking countries). Waiting for Google's review; the `mediaPlayback` foreground service
+declaration is the most likely reason for a rejection.
+
 **Next (no OpenSpec change yet):** heart rate, smartwatch integration, drag to reorder timers, other languages
 (UI strings are hardcoded in Kotlin).
 
